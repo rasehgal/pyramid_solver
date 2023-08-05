@@ -11,9 +11,8 @@ def traverse():
 	#now start magic
 	path = ""
 	matrix = f.readlines()
-	print_path = match_target(matrix, 0, 0, target, 1, path)
-	if print_path == "": print("no solution")
-	else: print(print_path)
+
+	print_result(match_target(matrix, 0, 0, target, 1, path))
 	f.close()
 
 
@@ -49,6 +48,15 @@ def match_target(matrix, line_number, index, target, prod, path):
 			return pathR
 	#if no next line, bounce it back
 	return path
+
+def print_result(print_path):
+	if print_path == "": 
+		return "no solution"
+	else:
+		reverse = print_path[::-1]
+		print(reverse)
+		return reverse
+
 
 
 
