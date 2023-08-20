@@ -93,14 +93,14 @@ def match_target(matrix, line, index, target, path, prod):
 		# recur on the left and note that we went left;
 		# print path if we get a solution
 		Lpath = path + "L"
-		if (this_value * match_target(matrix, index, next_line_num, target, Lpath, new_prod)) == target:
+		if (this_value * match_target(matrix, next_line_num, index, target, Lpath, new_prod)) == target:
 			print("solution: " + Lpath)
 		# check if there is a right index; if so then
 		# recur on right side and print path to any
 		# solutions we find
 		if next_line[index+1]: 
 			Rpath = path + "R"
-			if (this_value * match_target(matrix, index+1, next_line_num, target, Rpath, new_prod)) == target:
+			if (this_value * match_target(matrix, next_line_num, index+1, target, Rpath, new_prod)) == target:
 				print("solution: " + Rpath)
 
 	return 0
